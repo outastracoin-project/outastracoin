@@ -2190,10 +2190,10 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (pcheckpoint && nHeight < pcheckpoint->nHeight)
             return state.DoS(100, error("AcceptBlock() : forked chain older than last checkpoint (height %d)", nHeight));
 
-        // Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000)
+        // Reject block.nVersion=1 blocks (mainnet >= 1300, testnet >= 100)
         if (nVersion < 2)
         {
-            if ((!fTestNet && nHeight >= 1500) ||
+            if ((!fTestNet && nHeight >= 1300) ||
                (fTestNet && nHeight >= 100))
             {
                 return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"));
