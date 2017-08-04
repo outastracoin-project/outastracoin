@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Outastracoin"
-            VALUE "FileDescription",    "Outastracoin-cli (OSS RPC client for Outastracoin)"
+            VALUE "FileDescription",    "outastracoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "outastracoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
-            VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
+            VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "outastracoin-cli.exe"
-            VALUE "ProductName",        "Outastracoin-cli"
+            VALUE "ProductName",        "outastracoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
