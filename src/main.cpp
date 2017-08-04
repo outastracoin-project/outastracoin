@@ -2193,8 +2193,8 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         // Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000)
         if (nVersion < 2)
         {
-            if ((!fTestNet && nHeight >= 710000) ||
-               (fTestNet && nHeight >= 400000))
+            if ((!fTestNet && nHeight >= 1500) ||
+               (fTestNet && nHeight >= 100))
             {
                 return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"));
             }
