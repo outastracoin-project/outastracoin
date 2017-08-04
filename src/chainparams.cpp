@@ -132,7 +132,9 @@ public:
         assert(hashGenesisBlock == uint256("0x10cf47de8824d3e4f05877e2447c7665213fa432a4f45b4f21b16fd54ce3c7eb"));
         assert(genesis.hashMerkleRoot == uint256("0xc117f2cfa78bb65bc3a88d6cbafe05a96f54b69d9820387238f15bc5b0b07a8a"));
 
-        vSeeds.push_back(CDNSSeedData("dnsseed.outastracoin.info", "dnsseed.outastracoin.pro"));
+        vSeeds.push_back(CDNSSeedData("dnsseed.outastracoin.pro", "dnsseed.outastracoin.info"));
+        vSeeds.push_back(CDNSSeedData("node.outastracoin.pro", "node.outastracoin.info"));
+        vSeeds.push_back(CDNSSeedData("dnsseed.outastra.com", "node.outastra.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,15);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -151,8 +153,8 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // Outastracoin: Mainnet v2 enforced as of block 710k
-        nEnforceV2AfterHeight = 710000;
+        // Outastracoin: Mainnet v2 enforced as of block 1500
+        nEnforceV2AfterHeight = 1500;
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const 
@@ -190,7 +192,9 @@ public:
         
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("dnsseed.outastracoin.pro", "dnsseed.outastracoin.pro"));
+        vSeeds.push_back(CDNSSeedData("dnsseed.outastracoin.pro", "dnsseed.outastracoin.info"));
+        vSeeds.push_back(CDNSSeedData("node.outastracoin.pro", "node.outastracoin.info"));
+        vSeeds.push_back(CDNSSeedData("dnsseed.outastra.com", "node.outastra.com"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
@@ -209,8 +213,8 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        // Outastracoin: Testnet v2 enforced as of block 400k
-        nEnforceV2AfterHeight = 400000;
+        // Outastracoin: Testnet v2 enforced as of block 100
+        nEnforceV2AfterHeight = 100;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const 
     {
