@@ -154,7 +154,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
 
         // Outastracoin: Mainnet v2 enforced as of block 1500
-        nEnforceV2AfterHeight = 1500;
+        nEnforceV2AfterHeight = 1300;
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const 
