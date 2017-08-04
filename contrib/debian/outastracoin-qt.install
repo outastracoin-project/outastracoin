@@ -1,0 +1,6 @@
+outastracoin-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin16.xpm usr/share/pixmaps
+share/pixmaps/bitcoin128.png usr/share/pixmaps
+debian/outastracoin-qt.desktop usr/share/applications
+debian/outastracoin-qt.protocol usr/share/kde4/services/

@@ -1,30 +1,25 @@
-// Copyright (c) 2013-2014 The Bitcoin Core developers
-// Distributed under the MIT/X11 software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 //
 // Unit tests for block.CheckBlock()
 //
+#include <algorithm>
 
-
-
-#include "clientversion.h"
-#include "main.h"
-#include "utiltime.h"
-
-#include <cstdio>
-
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/path.hpp>
+#include <boost/assign/list_of.hpp> // for 'map_list_of()'
+#include <boost/date_time/posix_time/posix_time_types.hpp>
 #include <boost/test/unit_test.hpp>
+#include <boost/foreach.hpp>
 
+#include "main.h"
+#include "wallet.h"
+#include "net.h"
+#include "util.h"
 
 BOOST_AUTO_TEST_SUITE(CheckBlock_tests)
 
-bool read_block(const std::string& filename, CBlock& block)
+bool
+read_block(const std::string& filename, CBlock& block)
 {
     namespace fs = boost::filesystem;
-    fs::path testFile = fs::current_path() / "data" / filename;
+    fs::path testFile = fs::current_path() / "test" / "data" / filename;
 #ifdef TEST_DATA_DIR
     if (!fs::exists(testFile))
     {
@@ -36,8 +31,8 @@ bool read_block(const std::string& filename, CBlock& block)
 
     fseek(fp, 8, SEEK_SET); // skip msgheader/size
 
-    CAutoFile filein(fp, SER_DISK, CLIENT_VERSION);
-    if (filein.IsNull()) return false;
+    CAutoFile filein = CAutoFile(fp, SER_DISK, CLIENT_VERSION);
+    if (!filein) return false;
 
     filein >> block;
 
@@ -60,7 +55,7 @@ BOOST_AUTO_TEST_CASE(May15)
 
         // After May 15'th, big blocks are OK:
         forkingBlock.nTime = tMay15; // Invalidates PoW
-        BOOST_CHECK(CheckBlock(forkingBlock, state, false, false));
+        BOOST_CHECK(forkingBlock.CheckBlock(state, false, false));
     }
 
     SetMockTime(0);

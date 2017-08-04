@@ -1,12 +1,10 @@
-Source: bitcoin
+Source: outastracoin
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
 Uploaders: Micah Anderson <micah@debian.org>
 Build-Depends: debhelper,
  devscripts,
- automake,
- libtool,
  bash-completion,
  libboost-system-dev (>> 1.35) | libboost-system1.35-dev,
  libdb4.8++-dev,
@@ -19,55 +17,39 @@ Build-Depends: debhelper,
  libboost-test-dev (>> 1.35) | libboost-test1.35-dev,
  qt4-qmake,
  libqt4-dev,
- libqrencode-dev,
- libprotobuf-dev, protobuf-compiler,
- python
+ libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: https://www.bitcoin.org/
-Vcs-Git: git://github.com/bitcoin/bitcoin.git
-Vcs-Browser: https://github.com/bitcoin/bitcoin
+Homepage: http://outastra.com/
+Vcs-Git: git://github.com/outastra/outastracoin.git
+Vcs-Browser: http://github.com/outastra/outastracoin.git
 
-Package: bitcoind
+Package: outastracoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Bitcoin is a free open source peer-to-peer electronic cash system that
+ Outastracoin is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 20+ GB of space, slowly growing.
+ requires 2+ GB of space, slowly growing.
  .
- This package provides the daemon, bitcoind, and the CLI tool
- bitcoin-cli to interact with the daemon.
+ This package provides outastracoind, a combined daemon and CLI tool to
+ interact with the daemon.
 
-Package: bitcoin-qt
+Package: outastracoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Bitcoin is a free open source peer-to-peer electronic cash system that
+ Outastracoin is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 20+ GB of space, slowly growing.
+ requires 2+ GB of space, slowly growing.
  .
- This package provides Bitcoin-Qt, a GUI for Bitcoin based on Qt.
-
-Package: bitcoin-tx
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: peer-to-peer digital currency - standalone transaction tool
- Bitcoin is a free open source peer-to-peer electronic cash system that
- is completely decentralized, without the need for a central server or
- trusted parties.  Users hold the crypto keys to their own money and
- transact directly with each other, with the help of a P2P network to
- check for double-spending.
- .
- This package provides bitcoin-tx, a command-line transaction creation
- tool which can be used without a bitcoin daemon.  Some means of
- exchanging minimal transaction data with peers is still required.
+ This package provides Bitcoin-Qt, a GUI for Outastracoin based on Qt.

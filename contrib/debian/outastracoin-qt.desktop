@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Outastracoin
+Comment=Outastracoin P2P Cryptocurrency
+Comment[fr]=Outastracoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Outastracoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/outastracoin-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin128.png
+MimeType=x-scheme-handler/outastracoin;
+Categories=Office;
