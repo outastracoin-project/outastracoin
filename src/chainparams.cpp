@@ -76,19 +76,19 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S(""0000000000000000000000000000000000000000000000000000000000000000"");
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000000000");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
-        nDefaultPort = 33317;
-        nPruneAfterHeight = 100000;
+        pchMessageStart[0] = 0xcl;
+        pchMessageStart[1] = 0xou;
+        pchMessageStart[2] = 0xdc;
+        pchMessageStart[3] = 0xmc;
+        nDefaultPort = 9838;
+        nPruneAfterHeight = 1;
 
         genesis = CreateGenesisBlock(1482424380, 767505, 0x1e0ffff0, 1, 500 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -101,19 +101,19 @@ public:
         vSeeds.push_back(CDNSSeedData("v2dnsseed.outastra.com", "v2node.outastra.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,113);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,176);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,89);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,40);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,106);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
-        fDefaultConsistencyChecks = false;
+        fMiningRequiresPeers = false;
+        fDefaultConsistencyChecks = true;
         fRequireStandard = true;
-        fMineBlocksOnDemand = false;
-        fTestnetToBeDeprecatedFieldRPC = false;
+        fMineBlocksOnDemand = true;
+        fTestnetToBeDeprecatedFieldRPC = true;
 
 	checkpointData = (CCheckpointData) {
 		boost::assign::map_list_of
