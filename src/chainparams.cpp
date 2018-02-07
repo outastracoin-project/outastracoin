@@ -52,7 +52,7 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = 0;
+        consensus.BIP34Height = -1;
         consensus.BIP34Hash = uint256S("10cf47de8824d3e4f05877e2447c7665213fa432a4f45b4f21b16fd54ce3c7eb");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 15 * 60; // 15 minutes
@@ -87,7 +87,7 @@ public:
         pchMessageStart[1] = 0x0c;
         pchMessageStart[2] = 0xdc;
         pchMessageStart[3] = 0x3c;
-        nDefaultPort = 9838;
+        nDefaultPort = 33317;
         nPruneAfterHeight = 1;
 
         genesis = CreateGenesisBlock(1482424380, 767505, 0x1e0ffff0, 1, 500 * COIN);
@@ -110,9 +110,9 @@ public:
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = true;
-        fRequireStandard = true;
-        fMineBlocksOnDemand = true;
+        fDefaultConsistencyChecks = false;
+        fRequireStandard = false;
+        fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
 	checkpointData = (CCheckpointData) {
@@ -138,7 +138,7 @@ public:
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
         consensus.BIP34Height = -1;
-        consensus.BIP34Hash = uint256S("");
+        consensus.BIP34Hash = uint256S("3fa994d9991496c8d7b2609fbbabe0e560dca8455db7f56403d4b647c5efe170");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 2 * 24 * 60 * 60; // 2 days
         consensus.nPowTargetSpacing = 5 * 60;
