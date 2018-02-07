@@ -52,11 +52,11 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = -1;
+        consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("10cf47de8824d3e4f05877e2447c7665213fa432a4f45b4f21b16fd54ce3c7eb");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
-        consensus.nPowTargetTimespan = 1; // 1 second days
-        consensus.nPowTargetSpacing = 1;
+        consensus.nPowTargetTimespan = 15 * 60; // 15 minutes
+        consensus.nPowTargetSpacing = 15 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 0; // 75% of 8064
@@ -109,11 +109,11 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = true;
-        fRequireStandard = true;
-        fMineBlocksOnDemand = true;
-        fTestnetToBeDeprecatedFieldRPC = true;
+        fMiningRequiresPeers = true;
+        fDefaultConsistencyChecks = false;
+        fRequireStandard = false;
+        fMineBlocksOnDemand = false;
+        fTestnetToBeDeprecatedFieldRPC = false;
 
 	checkpointData = (CCheckpointData) {
 		boost::assign::map_list_of
@@ -143,7 +143,7 @@ public:
         consensus.nPowTargetTimespan = 2 * 24 * 60 * 60; // 2 days
         consensus.nPowTargetSpacing = 5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
-        consensus.fPowNoRetargeting = false;
+        consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 432; // 75% for testchains
         consensus.nMinerConfirmationWindow = 576; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -191,7 +191,7 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
@@ -259,9 +259,9 @@ public:
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
-        fDefaultConsistencyChecks = true;
+        fDefaultConsistencyChecks = false;
         fRequireStandard = false;
-        fMineBlocksOnDemand = true; 
+        fMineBlocksOnDemand = false; 
         fTestnetToBeDeprecatedFieldRPC = false;
 
 	checkpointData = (CCheckpointData){
